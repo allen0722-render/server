@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div id="app">
+    <table :style="{ width: '100%', textAlign: 'center' }">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="product in paginatedProducts" :key="product.id">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.amount }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.description }}</td>
+          <td>
+            <input v-model="buyItems[product.id]" type="number" min="0" max="100" step="1" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="button-container">
+      <button class="btn" @click="prevPage" :disabled="currentPage === 1">上一頁</button>
+      <button class="btn" @click="nextPage" :disabled="currentPage === totalPages">下一頁</button>
+    </div>
+
+    <a href="/" class="btn-home" >返回主頁</a>
+    <div class="space"></div> 
+    <div class="payment-buttons">
+      <button @click="ECPay">綠界支付</button>
+      <div id="paypal-area"></div>
+    </div>
+    <div id="ecpay" v-html="ecpayHtml"></div>
+  </div>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=<%= pay_pal_client_id %>"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="/javascripts/index.js"></script>
+</body>
+</html>

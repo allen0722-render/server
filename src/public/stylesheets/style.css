@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #9bc8f5;
+  color: #333;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#app {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 1800px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  font-size: 18px; 
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 2px solid #7fb0f0;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #d1ffe0;
+}
+
+input[type="number"] {
+  width: 80px;
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: #70c6f8;
+  margin: 0 10px;
+}
+
+.btn:hover {
+  background-color: #099ff7;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button-container > * {
+  margin: 0 10px;
+}
+
+.payment-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+#ecpay {
+  width: 800px;
+  height: 40px;
+}
+
+#paypal-area {
+  width: 800px;
+  height: 100px;
+}
+
+.space {
+  height: 30px;
+  width: 100%;
+}
+
+.btn-home {
+  float: right;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-home:hover {
+  background-color: #0056b3;
+}

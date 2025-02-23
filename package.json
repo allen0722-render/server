@@ -1,0 +1,47 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "set NODE_OPTIONS='--trace-deprecation --abort-on-uncaught-exception' && set NODE_ENV=development && nodemon --exec ts-node ./bin/www.ts",
+    "build": "sh etc/build.sh"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@types/lodash": "^4.17.7",
+    "cookie-parser": "~1.4.4",
+    "dayjs": "^1.11.12",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-validator": "^7.1.0",
+    "http-errors": "~1.6.3",
+    "knex": "^3.1.0",
+    "lodash": "^4.17.21",
+    "log4js": "latest",
+    "module-alias": "^2.2.2",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.10.3",
+    "rimraf": "^3.0.2",
+    "uuid": "^10.0.0",
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/debug": "^4.1.7",
+    "@types/express": "^4.17.13",
+    "@types/http-errors": "^1.8.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.10.2",
+    "@types/uuid": "^10.0.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.4.3"
+  },
+  "_moduleAliases": {
+    "@": "./src"
+  }
+}
