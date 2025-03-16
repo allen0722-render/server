@@ -9,13 +9,13 @@ enum ISOLATION_LEVEL{
 
 export const createDatabase = () =>{
     return knex({
-        client: 'mysql2',
+        client: 'pg',
         connection: {
-            host: process.env.DATABASE_HOST || '127.0.0.1',
-            port: Number(process.env.DATABASE_PORT) ||3306,
-            user: process.env.DATABASE_USER ||'root',
-            password: process.env.DATABASE_PASSWORD ||'xuemi_example',
-            database: process.env.DATABASE_DATABASE ||'xue_mi'
+            host: process.env.DATABASE_URL,
+            port: Number(process.env.DATABASE_PORT),
+            user: process.env.DATABASE_USER,
+            password: process.env.DATABASE_PASSWORD,
+            database: process.env.DATABASE_DATABASE
         },
         pool: {
             min: 2,

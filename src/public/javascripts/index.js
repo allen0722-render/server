@@ -1,4 +1,4 @@
-const serverDomain = "http://localhost:30000";
+const serverDomain = "http://localhost:3000";
 
 var vue = new Vue({
     el: '#app',
