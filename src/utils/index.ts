@@ -8,15 +8,12 @@ enum ISOLATION_LEVEL{
 }
 
 export const createDatabase = () =>{
+    if (!process.env.DATABASE_URL) {
+        throw new Error("DATABASE_URL is not defined in environment variables");
+    }
     return knex({
         client: 'pg',
-        connection: {
-            host: process.env.DATABASE_URL,
-            port: Number(process.env.DATABASE_PORT),
-            user: process.env.DATABASE_USER,
-            password: process.env.DATABASE_PASSWORD,
-            database: process.env.DATABASE_DATABASE
-        },
+        connection: process.env.DATABASE_URL,
         pool: {
             min: 2,
             max: 5
@@ -51,7 +48,7 @@ export const transactionHandler = async <T = any>(
 
         try{
             if(isolation)
-                await trx.raw(`SET TRANSACTION ISOLATION LEVEL SERIALIZABLE`);
+                await trx.raw(`SET TRANSACTION ISOLATION LEVEL ${isolation}`);
 
             const result = await callback(trx);
 

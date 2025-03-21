@@ -5,7 +5,7 @@ import express, { RequestHandler, ErrorRequestHandler  } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-
+import dotenv from 'dotenv';
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import { createDatabase } from './utils';
@@ -22,6 +22,7 @@ class App {
 
   constructor() {
     this.app = express();
+    dotenv.config();
     this.config();
 
     this.knexSql = createDatabase();

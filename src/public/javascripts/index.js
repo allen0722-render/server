@@ -22,7 +22,7 @@ var vue = new Vue({
                 const items = this.getItemDetailByBuyItems();
 
                 const result = await this.sendPayment(
-                    `${this.serverDomain}/orders/create`,
+                    `${serverDomain}/orders/create`,
                     {
                         paymentProvider: "PAYPAL",
                         paymentWay: "PAYPAL",
